@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<title>Miami-Dade Map Alpha Release</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet">
+<link href="styles.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+<script>
+$(document).ready(function() {
+  $(".toggle").click(function() {
+    $(".toggle").removeClass('btn-highlight')
+    $(this).addClass("btn-highlight");
+  }); // Put your code here
+});
+
+$(document).ready(function() {
+  $(".toggle-2").click(function() {
+    $(this).toggleClass("btn-highlight2");
+  }); // Put your code here
+});
+  </script>
+
+  <script>
+    window.onload = function(){
+        activeLayer = 'heat';
+        map.getCanvas().style.cursor = 'pointer';
+
+    }
+
+  </script>
+
+
+</head>
+<body>
+    <div id="nav-menu">
+        <h1>EJ Miami-Dade</h1>
+        <div id="social">
+        <h2 id="se">Socioeconomic Characteristics</h2>
+        <ul>
+            <li><button onclick="switchLayer('medInc', '9yalngb001z15qf1gut4yzn')" class="toggle" data-button-number="1">Median Income</button></li>
+            <li><button onclick="switchLayer('rent', '9ya8mw9009314n7juhm6b5d')" class="toggle" data-button-number="2">Rent</button></li>
+            <li><button onclick="switchLayer('shareBlack', '9yakn6a00d415khyd9sk2mq')" class="toggle" data-button-number="3">Share Black</button></li>
+            <li><button onclick="switchLayer('shareWhite', '8xhw7o8000h16odmlmc3g0o')" class="toggle" data-button-number="4">Share White</button></li>
+            <li><button onclick="switchLayer('shareAsian', '9yg82s8001a14k6ne93wy0h')" class="toggle" data-button-number="5">Share Asian</button></li>
+            <li><button onclick="switchLayer('shareHispanic', '9yasgqp00d615kh3nirw65n')" class="toggle" data-button-number="6">Share Hispanic</button></li>
+        </ul>
+        </div>
+        <div id="environmental">
+        <h2 id="eh">Environmental Health</h2>
+        <ul>
+            <li><button onclick="switchLayer('heat', '9yaybzb00g514p0z821b9gg')" autofocus class="toggle" data-button-number="7">Extreme Heat Risk</button></li>
+            <li><button onclick="switchLayer('asthma', '9ya2pny001v15qfxdsjld7f')" class="toggle" data-button-number="8">Asthma Rate</button></li>
+            <!-- <li><button class="toggle-2">Superfund Sites</button></li> 
+            <li><button class="toggle-2">Dump Sites</button></li> -->
+            <li><p id='output'></p></li>
+
+
+        </ul>
+    </div>
+    </div>
+<div id="map"></div>
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoidHlwcyIsImEiOiJjbDh4YXRyZmkwNHQ1M3Bvd25vNjdrMWkyIn0.HpGJaaIrWfLkmx8MiFKX9A';
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+        style: 'mapbox://styles/typs/cl9yaybzb00g514p0z821b9gg', // style URL
+        center: [-80.703896, 25.568010], // starting position [lng, lat]
+        zoom: 8.83, // starting zoom
+        projection: 'globe' // display the map as a 3D globe
+    });
+
+    map.on('style.load', () => {
+        map.setFog({}); // Set the default atmosphere style
+    });
+</script>
+
+<script>
+    function switchLayer(layer, styleID) {
+        activeLayer = layer;
+        map.setStyle('mapbox://styles/typs/cl' + styleID);
+    }
+    </script>
+
+</body>
+</html>

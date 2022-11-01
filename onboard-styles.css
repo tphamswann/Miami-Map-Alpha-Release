@@ -1,0 +1,99 @@
+*{
+    height: 100%;
+    margin-top:0;
+    margin-left:0;
+    margin-right:0;
+  }
+  
+  body{
+      width: 100%;  
+  }
+
+  .img-container{
+    background-image: url('bg.jpg');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+}
+
+.inner-container{
+    text-align: center;
+    background-position: center;
+}
+
+h1{
+    width: 100vw;
+    color: #66c6f2;
+    height: auto;
+    padding-top: 25vh;
+    filter: saturate(1);
+    font-weight:bold;
+    font-size:8.7vw;
+}
+
+.inner-container .big{
+    text-decoration: none;
+    cursor: pointer;
+    position: absolute;
+    top:62%;
+    left:50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    padding-top:1.6rem; 
+    padding-bottom:0.3rem; 
+    padding-left:5rem; 
+    padding-right:5rem; 
+    height:auto;
+    border-radius: 0.3rem;
+    background-color:#00A9D8;
+    color:white;
+    font-size: 1.3rem;
+    border:none;
+    font-family:'Roboto', sans-serif;
+    font-weight:lighter;
+}
+
+.inner-container .small1{
+    cursor: pointer;
+    position: absolute;
+    top:77%;
+    left:50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    padding-top:2.3rem; 
+    padding-bottom:1.3rem; 
+    padding-left:1rem; 
+    padding-right:1rem;     
+    height:auto;
+    background-color:#78a3af;
+    color:white;
+    border: none;
+    font-family:'Roboto', sans-serif;
+    border-radius: 0.3rem;
+    font-weight:lighter;
+}
+
+
+
+
+.inner-container .small2{
+    cursor: pointer;
+    position: absolute;
+    top:76%;
+    left:50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    padding-top:1.3rem; 
+    padding-bottom:0.3rem; 
+    padding-left:1rem; 
+    padding-right:1rem;     
+    height:auto;
+    background-color:#78a3af;
+    color:white;
+    border:none;
+    font-family:'Roboto', sans-serif;
+    border-radius: 0.3rem;
+    font-weight:lighter;
+}
